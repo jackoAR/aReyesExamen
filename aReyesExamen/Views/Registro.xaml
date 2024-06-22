@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aReyesExamen.Views.Registro"
+             Title="Registro">
+
+    <ScrollView>
+        <VerticalStackLayout
+        
+        Spacing="20"
+        Padding="20">
+        
+        <Label x:Name="lblDocente"
+               HorizontalOptions="Start"
+               FontSize="20"
+               TextColor="BlueViolet"
+        />
+
+
+        <Label 
+        Text="REGISTRO"            
+        HorizontalTextAlignment="Center"
+        FontSize="20"
+        TextColor="Red"
+        />
+
+        <Image 
+        Source="Resources/Images/uisrael.png"
+        WidthRequest="100"/>
+
+        <Grid RowSpacing="15">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label 
+            Text="Fecha"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="18"
+            Grid.Row="0"
+            Grid.Column="0"/>
+
+            <DatePicker 
+                    x:Name="DPfecha"
+                    Format="dd-MM-yyyy"
+                    MinimumDate="06/11/2024"
+                    MaximumDate="06/30/2024"
+                    FontSize="Small"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Grid.Row="0"
+                    Grid.Column="1"
+            />
+
+            <Label 
+                Text="País"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="18"
+                Grid.Row="1"
+                Grid.Column="0"/>
+
+            <Picker x:Name="SelectPais" 
+                    Grid.Row="1"
+                    Grid.Column="1">
+                <Picker.Items>
+                    <x:String>Ecuador</x:String>
+                    <x:String>Colombia</x:String>
+                    <x:String>Perú</x:String>
+                    <x:String>Argentina</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label 
+                Text="Ciudad"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="18"
+                Grid.Row="2"
+                Grid.Column="0"/>
+
+            <Picker x:Name="SelectCiudad" 
+                    Grid.Row="2"
+                    Grid.Column="1">
+                <Picker.Items>
+                    <x:String>Quito</x:String>
+                    <x:String>Bogotá</x:String>
+                    <x:String>Lima</x:String>
+                    <x:String>Buenos Aires</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label 
+                    Text="Monto Inicial"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontSize="18"
+                    Grid.Row="3"
+                    Grid.Column="0"/>
+            
+            <Entry x:Name="EntryMontoInicial" 
+                   Keyboard="Numeric" 
+                   Placeholder="Monto Inicial" 
+                   MaxLength="4" 
+                   MaximumWidthRequest="150"
+                   Grid.Row="3"
+                   Grid.Column="1"/>
+
+            <Button x:Name="btnPagoMensual"
+                    Text="Calcular Pago Mensual"
+                    Clicked="btnPagoMensual_Clicked"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                />
+
+                <Entry x:Name="EntryCalculoPagoMensual" 
+                       Keyboard="Numeric" 
+                       Placeholder="Calculo Pago Mensual" 
+                       MaxLength="4" 
+                       MaximumWidthRequest="150"
+                       Grid.Row="4"
+                       Grid.Column="1"
+                       IsEnabled="False"/>
+
+            </Grid>
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
